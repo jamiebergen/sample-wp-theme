@@ -129,6 +129,10 @@ function jmb_sample_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Add Google Fonts: Lora and Lato  
+  	wp_enqueue_style( 'jmb_sample_theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Lora:400,700' );
+
 }
 add_action( 'wp_enqueue_scripts', 'jmb_sample_theme_scripts' );
 
