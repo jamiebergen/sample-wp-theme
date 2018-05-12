@@ -1,8 +1,9 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	margin-left: 3em;
+
+	@media screen and (max-width: 1024px) {
+        margin-left: 0;
+    }
 
 	ul {
 		display: none;

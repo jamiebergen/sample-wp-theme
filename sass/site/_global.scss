@@ -28,11 +28,34 @@
         "footer footer";
     grid-gap: 60px;
 
-    @media (max-width: 1024px) {
+    @media screen and (max-width: 1024px) {
         grid-template-areas: 
             "header header"
             "main main"
             "sidebar sidebar"
             "footer footer";
     }
+}
+
+
+/*--------------------------------------------------------------
+# Header Layout using Flexbox
+--------------------------------------------------------------*/
+
+#masthead {
+    display: flex;
+    justify-content: space-between;
+
+    .site-branding {
+        flex: 1;
+    }
+
+    nav {
+        align-self: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
+    
 }
