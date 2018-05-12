@@ -25,7 +25,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jmb-sample-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="default-row-container">
 			
 			<div class="site-branding">
 				<?php
@@ -57,5 +56,4 @@
 				?>
 			</nav><!-- #site-navigation -->
 
-		</div><!-- .default-row-container -->
 	</header><!-- #masthead -->
