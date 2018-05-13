@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'jmb_sample_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jmb_sample_theme_scripts() {
-	wp_enqueue_style( 'jmb-sample-theme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'jmb-sample-theme-style', get_stylesheet_uri(), 'dashicons' );
 
 	wp_enqueue_script( 'jmb-sample-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -131,8 +131,10 @@ function jmb_sample_theme_scripts() {
 	}
 
 	// Add Google Fonts: Lora and Lato  
-  	wp_enqueue_style( 'jmb_sample_theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Lora:400,700' );
+  	wp_enqueue_style( 'jmb-sample-theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Lora:400,700' );
 
+  	// Make dashicons available on front end
+  	wp_enqueue_style( 'dashicons' );
 }
 add_action( 'wp_enqueue_scripts', 'jmb_sample_theme_scripts' );
 
