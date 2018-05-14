@@ -19,7 +19,7 @@
 				printf( esc_html__( 'Proudly powered by %s', 'jmb-sample-theme' ), 'WordPress' );
 				?>
 			</a>
-			<span class="sep"> | </span>
+			<span class="sep">&nbsp;&nbsp;|&nbsp;</span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jmb-sample-theme' ), 'Sample Theme', '<a href="https://jamiebergen.com/">Jamie Bergen</a>' );
