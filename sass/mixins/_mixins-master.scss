@@ -11,6 +11,13 @@
 	margin-right: auto;
 }
 
+// Default grid container
+@mixin default-grid-container {
+	max-width: 1260px;
+ 	margin: 0 auto;
+	padding: 0 5%;
+}
+
 // Clearfix
 @mixin clearfix() {
 	content: "";

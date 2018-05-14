@@ -22,9 +22,11 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jmb-sample-theme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jmb-sample-theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
+		<div class="default-grid-container inner-container">
 			
 			<div class="site-branding">
 				<?php
@@ -56,4 +58,8 @@
 				?>
 			</nav><!-- #site-navigation -->
 
+		</div> <!-- .default-grid-container -->
+
 	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">

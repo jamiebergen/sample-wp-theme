@@ -2,70 +2,51 @@
 # Positioning of main page sections using CSS Grid
 --------------------------------------------------------------*/
 
-#masthead {
-    grid-area: header;
-}
 #primary {
     grid-area: main;
 }
 #secondary {
     grid-area: sidebar;
 }
-#colophon {
-    grid-area: footer;
-}
 
-#page {
-
-    max-width: 1260px;
-    margin: 0 auto;
-    padding: 0 30px;
-
+#content {
     display: grid;
     grid-gap: 60px;
+    @include default-grid-container;
 
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
-        "header header"
-        "main sidebar"
-        "footer footer";
-    
+        "main sidebar";
 
     @media screen and (max-width: 1024px) {
         grid-template-areas: 
-            "header header"
             "main main"
-            "sidebar sidebar"
-            "footer footer";
+            "sidebar sidebar";
     }
 }
 
-.page #page { /* Narrow main content and no sidebar on pages */
+.page #content { /* Narrow main content and no sidebar on pages */
 
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: 
-        "header header header"
-        ". main ."
-        "footer footer footer";
+        ". main .";
 
     @media screen and (max-width: 1024px) {
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-areas: 
-            "header header"
-            "main main"
-            "footer footer";
+            "main";
     }
 }
 
-
+.default-grid-container {
+    @include default-grid-container;
+}
 
 /*--------------------------------------------------------------
 # Header Layout using Flexbox
 --------------------------------------------------------------*/
 
 #masthead {
-    display: flex;
-    justify-content: space-between;
 
     .site-branding {
         flex: 1;
@@ -75,10 +56,15 @@
         align-self: center;
     }
 
-    @media screen and (max-width: 1024px) {
-        flex-direction: column;
+    .inner-container {
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
-    
+
 }
 
 /*--------------------------------------------------------------
@@ -113,26 +99,24 @@
 # Footer Styling
 --------------------------------------------------------------*/
 
-// Make container full-width so it can have full-width background color 
-// https://css-tricks.com/full-width-containers-limited-width-parents/
-
 #colophon {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    background-color: $color__text-main;
-}
 
-#colophon .site-info {
-    text-align: center;
-    margin: 2em 30px;
+    background-color: $color__text-main;
     color: #fff;
 
     a {
         color: #fff;
+    }
+
+    .site-info {
+        text-align: center;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        
+
+        .sep {
+            padding: 0 5px 0 10px;
+        }
     }
 }
 
