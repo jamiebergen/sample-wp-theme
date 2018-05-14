@@ -21,8 +21,8 @@ The theme was tested as follows:
 3. WordPress [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test)
 4. Tested with [Theme Check](https://wordpress.org/plugins/theme-check/)
 4. Tested for compliance with [WCAG 2.0 accessibility guidelines](https://www.w3.org/WAI/intro/wcag), Level AA
-5. !!!TO DO: Tested on common browsers and devices 
-6. !!!TO DO: Tested for adherence with WordPress coding standards using [PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
+5. !!!TO DO: Test on common browsers and devices 
+6. !!!TO DO: Test for adherence with WordPress coding standards using [PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 
 Installing the Theme
 ---------------
