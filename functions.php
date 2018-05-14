@@ -131,7 +131,7 @@ function jmb_sample_theme_scripts() {
 	}
 
 	// Add Google Fonts: Lora and Lato  
-  	wp_enqueue_style( 'jmb-sample-theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Lora:400,700' );
+  	wp_enqueue_style( 'jmb-sample-theme-google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Lora:400' );
 
   	// Make dashicons available on front end
   	wp_enqueue_style( 'dashicons' );

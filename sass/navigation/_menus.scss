@@ -28,7 +28,7 @@
 			left: -999em;
 			z-index: 99999;
 			background-color: #fff;
-			border: solid 1px $color__border-table;
+			border: solid 1px $color__lightest;
 			padding: 1em;
 
 			ul {
@@ -42,7 +42,7 @@
 					left: 100%;
 				}
 				padding: 0.8em 0;
-				border-bottom: 1px solid $color__border-table;
+				border-bottom: 1px solid $color__lightest;
 
 				&:first-of-type {
 					padding-top: 0;
@@ -78,18 +78,18 @@
 
 		&:hover > a,
 		&.focus > a {
-			color: $color__menu-active-link;
+			color: $color__link;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
-		color: $color__menu-default-link;
+		color: $color__lighter-copy;
 
 		&:hover,
 		&:focus {
-			color: $color__menu-active-link;
+			color: $color__link;
 		}
 	}
 
@@ -97,7 +97,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		color: $color__menu-active-link;
+		color: $color__link;
 	}
 }
 

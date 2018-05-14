@@ -13,8 +13,8 @@
 
         li {
             padding: 0.8em 0;
-            border-bottom: 1px solid $color__border-table;
-            color: $color__menu-default-link;
+            border-bottom: 1px solid $color__lightest;
+            color: $color__lighter-copy;
 
             &:last-of-type {
                 border-bottom: none;
@@ -23,11 +23,11 @@
 
         a {
             text-decoration: none;
-            color: $color__menu-default-link;
+            color: $color__lighter-copy;
             
             &:hover,
             &:focus {
-                color: $color__menu-active-link;
+                color: $color__link;
             }
         }
     }

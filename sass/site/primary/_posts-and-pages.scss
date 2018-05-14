@@ -22,7 +22,25 @@
 }
 
 article {
-    .entry-title a {
-        text-decoration: none;
+
+    .entry-title {
+        @include font-size(2.441); /* Match h1 from _headings.scss */
+
+        a {
+            text-decoration: none;
+            color: $color__header;
+        }
+    }
+
+    .entry-meta {
+        color: $color__lighter-copy;
+
+        a {
+            color: $color__lighter-copy;
+        }
+    }
+
+    .entry-content {
+        @include font-size(1.1);
     }
 }
