@@ -146,3 +146,31 @@ if ( ! function_exists( 'jmb_sample_theme_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'jmb_sample_theme_get_read_more_link' ) ) :
+	/**
+	 * Helper function to generate read more link for excerpts
+	 *
+	 * Makes the excerpt "read more" a link and includes screen reader text
+	 * 'Continue reading: ' is a translatable string
+	 */
+    //
+    function jmb_sample_theme_get_read_more_link( $permalink, $title ) {
+        $excerpt_more = '';
+        $excerpt_more .= '&nbsp;<a class="excerpt-more" href="' . $permalink . '">[&hellip;]';
+        $excerpt_more .= sprintf(
+            wp_kses(
+            /* translators: %s: Name of current post. Only visible to screen readers */
+                __( '<span class="screen-reader-text">Continue reading: "%s"</span>', 'jmb-sample-theme' ),
+                array(
+                    'span' => array(
+                        'class' => array(),
+                    ),
+                )
+            ),
+            $title
+        );
+        $excerpt_more .= '</a>';
+        return $excerpt_more;
+    }
+endif;

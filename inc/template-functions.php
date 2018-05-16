@@ -35,3 +35,28 @@ function jmb_sample_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'jmb_sample_theme_pingback_header' );
+
+/**
+ * Makes the excerpt "read more" a link to the full post
+ */
+// Case for automatically generated excerpts
+function jmb_sample_theme_excerpt_more( $more ) {
+	global $post;
+	$permalink = get_permalink($post->ID);
+	$title = get_the_title();
+	$excerpt_more = jmb_sample_theme_get_read_more_link( $permalink, $title );
+	return $excerpt_more;
+}
+add_filter( 'excerpt_more', 'jmb_sample_theme_excerpt_more' );
+
+// Case for hand-crafted excerpts
+function jmb_sample_theme_manual_excerpt_read_more_link($excerpt) {
+	$excerpt_more = '';
+	if ( has_excerpt() && !is_attachment() && get_post_type() == 'post' ) {
+		$permalink = get_permalink();
+		$title = get_the_title();
+		$excerpt_more = jmb_sample_theme_get_read_more_link( $permalink, $title );
+	}
+	return $excerpt . $excerpt_more;
+}
+add_filter( 'get_the_excerpt', 'jmb_sample_theme_manual_excerpt_read_more_link' );
