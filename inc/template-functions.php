@@ -50,7 +50,7 @@ function jmb_sample_theme_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'jmb_sample_theme_excerpt_more' );
 
 // Case for hand-crafted excerpts
-function jmb_sample_theme_manual_excerpt_read_more_link($excerpt) {
+function jmb_sample_theme_manual_excerpt_more( $excerpt ) {
 	$excerpt_more = '';
 	if ( has_excerpt() && !is_attachment() && get_post_type() == 'post' ) {
 		$permalink = get_permalink();
@@ -59,4 +59,4 @@ function jmb_sample_theme_manual_excerpt_read_more_link($excerpt) {
 	}
 	return $excerpt . $excerpt_more;
 }
-add_filter( 'get_the_excerpt', 'jmb_sample_theme_manual_excerpt_read_more_link' );
+add_filter( 'get_the_excerpt', 'jmb_sample_theme_manual_excerpt_more' );
