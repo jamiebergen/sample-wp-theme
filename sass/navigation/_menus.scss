@@ -31,11 +31,6 @@
 	list-style: none;
 }
 
-.nav-collapse li {
-	width: 100%;
-	display: block;
-}
-
 .js .nav-collapse {
 	clip: rect(0 0 0 0);
 	max-height: 0;
@@ -131,15 +126,9 @@
 
 @media screen and (min-width: 40em) {
 	.nav-collapse a {
-		border-bottom: 0;
-		border-right: 1px solid white;
-		padding: 1em 1.5em;
-		margin: 0;
-		float: left;
-		text-align: center;
-	}
-	.nav-collapse li:first-child a {
-		border-left: 1px solid white;
+		color: $color__lighter-copy;
+		background: none;
+		border: none;
 	}
 }
 
@@ -147,17 +136,6 @@
 /* ------------------------------------------
   NAV TOGGLE STYLES
 --------------------------------------------- */
-
-@font-face {
-	font-family: "responsivenav";
-	src:url("../icons/responsivenav.eot");
-	src:url("../icons/responsivenav.eot?#iefix") format("embedded-opentype"),
-	url("../icons/responsivenav.ttf") format("truetype"),
-	url("../icons/responsivenav.woff") format("woff"),
-	url("../icons/responsivenav.svg#responsivenav") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
 
 .nav-toggle {
 	border: 1px solid #fff;
@@ -194,7 +172,8 @@
 
 .nav-collapse a:hover,
 .nav-collapse li.focus > a {
-	background-color: #3e4853;
+	color: $color__link;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 39.999em) {
@@ -211,7 +190,7 @@
 		max-height: 9999px !important;
 	}
 
-	.js .nav-collapse.multiple-level-nav .sub-menu {
+	.js .nav-collapse.multiple-level-nav .children {
 		clip: rect(0 0 0 0);
 		max-height: 0;
 		position: absolute;
@@ -220,7 +199,7 @@
 		zoom: 1;
 	}
 
-	.js .nav-collapse.multiple-level-nav .sub-menu.toggled {
+	.js .nav-collapse.multiple-level-nav .children.toggled {
 		display: block;
 		max-height: 9999px;
 		position: relative;
@@ -266,8 +245,7 @@
 }
 
 .dropdown ul ul a {
-	background: #2d353e
-;
+	background: #2d353e;
 	padding-left: 2.5em;
 }
 
@@ -290,7 +268,6 @@
 @media screen and (min-width: 40em) {
 
 	.nav-collapse {
-		padding-right: 4%;
 		position: relative;
 	}
 
@@ -342,7 +319,7 @@
 
 	.nav-collapse a {
 		display: inline-block;
-		padding: 0 16px;
+		padding: 0 0.8em;
 	}
 
 	.nav-collapse ul ul {
@@ -352,7 +329,8 @@
 		top: 85px;
 		left: -999em;
 		z-index: 99999;
-		text-align: center;
+		background-color: #fff;
+		border: 1px solid $color__lightest;
 	}
 
 	.nav-collapse li li {
@@ -360,6 +338,7 @@
 		display: block;
 		height: auto;
 		line-height: 1.0909090909;
+		width: 100%;
 	}
 
 	.nav-collapse ul ul ul {
@@ -367,24 +346,57 @@
 		top: 20px;
 	}
 
-	.nav-collapse ul ul a {
-		padding: 15px 12px;
-		white-space: normal;
-		width: 150px;
+	.nav-collapse ul ul {
+		a {
+			white-space: normal;
+			padding: 1em;
+			border-bottom: 1px solid $color__lightest;
+			line-height: 1.3;
+		}
+		li:last-of-type a {
+			border-bottom: none;
+		}
 	}
 
 	.nav-collapse ul li:hover > ul,
 	.nav-collapse ul li.focus > ul {
 		top: 55px;
-		left: 50%;
-		margin-left: -75px;
+		left: 0;
+		width: 200px;
 	}
 
 	.nav-collapse ul ul li:hover > ul,
 	.nav-collapse ul ul li.focus > ul {
-		top: 0;
+		top: 10px;
 		left: 0%;
-		margin-left: 150px;
+		margin-left: 190px;
 	}
+}
 
+// Custom menu styles
+@media screen and (min-width: 40em) {
+	.main-navigation {
+
+		#primary-menu {
+			.current_page_item > a,
+			.current-menu-item > a,
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+				color: #fff;
+				background-color: $color__text-main;
+			}
+
+			.menu-items > li {
+				margin: 0 0.2em;
+			}
+		}
+
+		li {
+			&:hover > a,
+			&.focus > a {
+				color: #fff;
+				background-color: $color__text-main;
+			}
+		}
+	}
 }
