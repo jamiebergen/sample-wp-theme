@@ -51,11 +51,11 @@
 				<button id="nav-toggle" class="nav-toggle"><?php esc_html_e( 'MENU', 'jmb-sample-theme' ); ?></button>
 				<?php
 				wp_nav_menu( array(
-				    'container'       => 'nav',
-					//'container_class' => 'nav-collapse',
-				    'menu_class'      => 'nav-collapse',
-					'theme_location'  => 'menu-1',
-					'menu_id'         => 'primary-menu',
+				        'container'       => 'nav',
+					    //'container_class' => 'nav-collapse',
+				        'menu_class'      => 'nav-collapse',
+					    'theme_location'  => 'menu-1',
+					    'menu_id'         => 'primary-menu',
 				) );
 				?>
 			</div><!-- #site-navigation -->
