@@ -312,8 +312,8 @@
 	.nav-collapse li {
 		border: 0;
 		display: inline-block;
-		height: 55px;
-		line-height: 55px;
+		height: 47px;
+		line-height: 47px;
 		position: relative;
 	}
 
@@ -330,7 +330,7 @@
 		left: -999em;
 		z-index: 99999;
 		background-color: #fff;
-		border: 1px solid $color__text-main;
+		border: 1px solid $color__darkest;
 	}
 
 	.nav-collapse li li {
@@ -350,7 +350,7 @@
 		a {
 			white-space: normal;
 			padding: 1em;
-			border-bottom: 1px solid $color__text-main;
+			border-bottom: 1px solid $color__darkest;
 			line-height: 1.3;
 		}
 		li:last-of-type a {
@@ -360,7 +360,7 @@
 
 	.nav-collapse ul li:hover > ul,
 	.nav-collapse ul li.focus > ul {
-		top: 55px;
+		top: 48px;
 		left: 0;
 		width: 200px;
 	}
@@ -383,7 +383,16 @@
 			.current_page_ancestor > a,
 			.current-menu-ancestor > a {
 				color: #fff;
-				background-color: $color__text-main;
+				background-color: $color__darkest;
+				//border: 1px solid $color__text-main;
+			}
+			> ul > li.current_page_item > a,
+			> ul > li.current-menu-item > a,
+			> ul > li.current_page_ancestor > a,
+			> ul > li.current-menu-ancestor > a {
+				background: none;
+				color: $color__darkest;
+				border: 1px solid $color__darkest;
 			}
 
 			.menu-items > li {
@@ -392,10 +401,14 @@
 		}
 
 		li {
+			a {
+				border: 1px solid transparent;
+			}
 			&:hover > a,
 			&.focus > a {
-				color: #fff;
-				background-color: $color__text-main;
+				color: #fff !important;
+				background-color: $color__darkest !important;
+				border: 1px solid $color__darkest !important;
 			}
 		}
 	}
