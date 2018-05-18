@@ -48,7 +48,7 @@
 			</div><!-- .site-branding -->
 
 			<div id="site-navigation" class="main-navigation">
-				<button id="nav-toggle" class="nav-toggle"><?php esc_html_e( 'MENU', 'jmb-sample-theme' ); ?></button>
+				<button id="nav-toggle" class="nav-toggle"><?php esc_html_e( 'OPEN MENU', 'jmb-sample-theme' ); ?></button>
 				<?php
 				wp_nav_menu( array(
 				        'container'       => 'nav',

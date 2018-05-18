@@ -26,10 +26,10 @@ var navigation = responsiveNav( ".nav-collapse", {
     openDropdown: '<span class="screen-reader-text">Open sub menu</span>',
     closeDropdown: '<span class="screen-reader-text">Close sub menu</span>',
     open: function () {
-        customToggle.innerHTML = 'Close menu';
+        customToggle.innerHTML = 'CLOSE MENU';
     },
     close: function () {
-        customToggle.innerHTML = 'Open menu';
+        customToggle.innerHTML = 'OPEN MENU';
     },
     resizeMobile: function () {
         customToggle.setAttribute( 'aria-controls', 'nav' );

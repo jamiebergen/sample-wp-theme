@@ -61,10 +61,27 @@
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 1150px) {
             flex-direction: column;
         }
+
     }
+
+	@media screen and (max-width: 1023px) {
+		.site-branding {
+			order: 2;
+		}
+		.site-navigation {
+			order: 1;
+		}
+		.default-grid-container {
+			padding: 0;
+		}
+		.site-branding {
+			padding-right: 0;
+			margin: 2em 5%;
+		}
+	}
 
 }
 
