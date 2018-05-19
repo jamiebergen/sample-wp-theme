@@ -13,4 +13,5 @@
 
 .wp-caption-text {
 	text-align: center;
+	@include font-size(0.8);
 }

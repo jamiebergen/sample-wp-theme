@@ -1,13 +1,13 @@
+// Based on 700px max content width
+// Used in media/_galleries.scss
 $columns: (
-	1: 100%,
-	2: 50%,
-	3: 33.33%,
-	4: 25%,
-	5: 20%,
-	6: 16.66%,
-	7: 14.28%,
-	8: 12.5%,
-	9: 11.11%
+		1: 700px,
+		2: 350px,
+		3: 233px,
+		4: 175px,
+		5: 140px,
+		6: 116px,
+		7: 95px,
+		8: 80px,
+		9: 70px
 );
-
-$columns__margin: 3.8%;
