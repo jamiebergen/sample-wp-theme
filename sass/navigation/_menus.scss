@@ -2,13 +2,23 @@
 .posts-navigation,
 .post-navigation {
 
+	border-top: 1px solid $color__lightest;
+
 	.site-main & {
 		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	a {
+		color: $color__lighter-copy;
+		text-decoration: none;
+
+		&:hover {
+			color: $color__darkest;
+		}
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
 
 		a:before {
 			font-family: 'dashicons';
@@ -21,9 +31,6 @@
 	}
 
 	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
 
 		a:after {
 			font-family: 'dashicons';
@@ -35,26 +42,51 @@
 		}
 	}
 
-	a {
-		text-decoration: none;
-		color: #fff;
-		background-color: $color__darkest;
-		padding: 1em 3em;
+	.nav-links {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1em;
 
-		&:hover,
-		&:focus {
-			background-color: $color__lighter-copy;
+		.nav-previous,
+		.nav-next {
+			width: 100%;
+			padding: 1em 0;
+			display: flex;
+			align-items: center;
+		}
+
+		.nav-previous {
+			justify-content: left;
+		}
+		.nav-next {
+			justify-content: right;
+			text-align: right;
+
+			&:only-child {
+				grid-column-start: 2;
+			}
 		}
 	}
 
 	@media screen and (max-width: 500px) {
-		.nav-previous,
-		.nav-next {
-			width: 100%;
-			text-align: center;
-		}
-		.nav-next {
-			margin-top: 3em;
+
+		.nav-links {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+
+			.nav-previous,
+			.nav-next {
+				justify-content: center;
+			}
+
+			.nav-next {
+
+				&:only-child { // Edge case: last post
+					grid-column-start: auto;
+				}
+			}
+
 		}
 	}
 }
