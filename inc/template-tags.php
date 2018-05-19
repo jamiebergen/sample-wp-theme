@@ -25,8 +25,15 @@ if ( ! function_exists( 'jmb_sample_theme_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
+			wp_kses(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'jmb-sample-theme' ),
+				__( '<span class="screen-reader-text">Posted on </span>%s', 'jmb-sample-theme' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -41,12 +48,19 @@ if ( ! function_exists( 'jmb_sample_theme_posted_by' ) ) :
 	 */
 	function jmb_sample_theme_posted_by() {
 		$byline = sprintf(
+			wp_kses(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'jmb-sample-theme' ),
+				__( '<span class="screen-reader-text">by </span>%s', 'jmb-sample-theme' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo '<span class="byline"><span class="sep">|</span>' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -61,15 +75,38 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'jmb-sample-theme' ) );
 			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'jmb-sample-theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				echo '<span class="cat-links">';
+                printf(
+					wp_kses(
+					/* translators: 1: list of categories. */
+						__( '<span class="screen-reader-text">Posted in </span>%1$s', 'jmb-sample-theme' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					), $categories_list
+                );
+                echo '</span>';
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'jmb-sample-theme' ) );
 			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'jmb-sample-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				echo '<span class="tags-links">';
+				printf(
+					wp_kses(
+					/* translators: 1: list of tags. */
+						__( '<span class="screen-reader-text">Tagged </span>%1$s', 'jmb-sample-theme' ),
+						array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					), $tags_list
+				);
+				echo '</span>';
+
 			}
 		}
 
@@ -78,7 +115,7 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: post title */
+					/* translators: %s: post title */
 						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'jmb-sample-theme' ),
 						array(
 							'span' => array(
@@ -95,7 +132,7 @@ if ( ! function_exists( 'jmb_sample_theme_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+				/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'jmb-sample-theme' ),
 					array(
 						'span' => array(
@@ -126,21 +163,21 @@ if ( ! function_exists( 'jmb_sample_theme_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
+            <div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+            </div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
-			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
-			?>
-		</a>
+            <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php
+				the_post_thumbnail( 'post-thumbnail', array(
+					'alt' => the_title_attribute( array(
+						'echo' => false,
+					) ),
+				) );
+				?>
+            </a>
 
 		<?php
 		endif; // End is_singular().
@@ -154,23 +191,24 @@ if ( ! function_exists( 'jmb_sample_theme_get_read_more_link' ) ) :
 	 * Makes the excerpt "read more" a link and includes screen reader text
 	 * 'Continue reading: ' is a translatable string
 	 */
-    //
-    function jmb_sample_theme_get_read_more_link( $permalink, $title ) {
-        $excerpt_more = '';
-        $excerpt_more .= '&nbsp;<a class="excerpt-more" href="' . $permalink . '">[&hellip;]';
-        $excerpt_more .= sprintf(
-            wp_kses(
-            /* translators: %s: Name of current post. Only visible to screen readers */
-                __( '<span class="screen-reader-text">Continue reading: "%s"</span>', 'jmb-sample-theme' ),
-                array(
-                    'span' => array(
-                        'class' => array(),
-                    ),
-                )
-            ),
-            $title
-        );
-        $excerpt_more .= '</a>';
-        return $excerpt_more;
-    }
+	//
+	function jmb_sample_theme_get_read_more_link( $permalink, $title ) {
+		$excerpt_more = '';
+		$excerpt_more .= '&nbsp;<a class="excerpt-more" href="' . $permalink . '">[&hellip;]';
+		$excerpt_more .= sprintf(
+			wp_kses(
+			/* translators: %s: Name of current post. Only visible to screen readers */
+				__( '<span class="screen-reader-text">Continue reading: "%s"</span>', 'jmb-sample-theme' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			$title
+		);
+		$excerpt_more .= '</a>';
+
+		return $excerpt_more;
+	}
 endif;
