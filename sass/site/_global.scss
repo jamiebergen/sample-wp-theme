@@ -1,42 +1,31 @@
 /*--------------------------------------------------------------
-# Positioning of main page sections using CSS Grid
+# Positioning of main page sections
 --------------------------------------------------------------*/
 
-#primary {
-    grid-area: main;
-}
-#secondary {
-    grid-area: sidebar;
-}
-
 #content {
-    display: grid;
-    grid-gap: 60px;
-    @include default-grid-container;
 
-    grid-template-columns: minmax(0, 800px) minmax(0, 300px);
-    grid-template-areas: 
-        "main sidebar";
+	@include default-grid-container;
 
-    @media screen and (max-width: 1024px) {
-	    grid-template-columns: minmax(0, auto);
-	    grid-template-areas:
-			    "main"
-                "sidebar";
-    }
+	@media (min-width: 1023px) {
+
+		display: flex;
+
+		#primary {
+			width: 70%;
+		}
+		#secondary {
+			width: 30%;
+			padding-left: 4em;
+		}
+	}
+
 }
 
 .page #content { /* Narrow main content and no sidebar on pages */
 
-    grid-template-columns: 1fr minmax(0, 800px) 1fr;
-    grid-template-areas: 
-        ". main .";
-
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: minmax(0, auto);
-        grid-template-areas: 
-            "main";
-    }
+	#primary {
+		margin: 0 auto;
+	}
 }
 
 .default-grid-container {
@@ -124,6 +113,7 @@
 
     background-color: $color__darkest;
     color: #fff;
+	margin-top: 3em;
 
     a {
         color: #fff;
