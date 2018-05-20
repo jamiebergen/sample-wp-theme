@@ -55,12 +55,12 @@
 			align-items: center;
 		}
 
-		.nav-previous {
-			justify-content: left;
-		}
 		.nav-next {
-			justify-content: right;
-			text-align: right;
+			display: grid;
+
+			a {
+				justify-self: end;
+			}
 
 			&:only-child {
 				grid-column-start: 2;
