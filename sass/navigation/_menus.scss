@@ -329,13 +329,15 @@
 		font-family: dashicons;
 		content: "\f347";
 		font-size: 1.5em;
-		padding-top: 5px;
+		position: absolute;
+		line-height: 40px;
+		top: 0;
+		padding-top: 1px;
 	}
 	.js .nav-collapse .dropdown-toggle.toggled:after {
 		font-family: dashicons;
 		content: "\f343";
-		font-size:1.5em;
-		padding-top: 3px;
+		font-size: 1.5em;
 	}
 
 }
