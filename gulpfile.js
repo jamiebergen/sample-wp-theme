@@ -94,6 +94,7 @@ const AUTOPREFIXER_BROWSERS = [
  * Load gulp plugins and passing them semantic names.
  */
 var gulp         = require('gulp'); // Gulp of-course
+var zip          = require('gulp-zip'); // To generate a theme zip file
 
 // CSS related plugins.
 var sass         = require('gulp-sass'); // Gulp pluign for Sass compilation.
@@ -118,6 +119,26 @@ var browserSync  = require('browser-sync').create(); // Reloads browser and inje
 var reload       = browserSync.reload; // For manual browser reload.
 var wpPot        = require('gulp-wp-pot'); // For generating the .pot file.
 var sort         = require('gulp-sort'); // Recommended to prevent unnecessary changes in pot-file.
+
+/**
+ * Task: `zip`.
+ *
+ * Generates a zip file of the theme that can be manually installed
+ * 
+ * Source: https://www.briancoords.com/blog/wordpress-theme-or-plugin-zip-file-with-gulp/
+ */
+gulp.task( 'zip', function () {
+  return gulp.src([
+    './**/*',
+    '!./{node_modules,node_modules/**/*}',
+    '!./{sass,sass/**/*}',
+    '!./gulpfile.js',
+    '!./package.json',
+    '!./package-lock.json'
+  ])
+    .pipe(zip('jmb-sample-theme.zip'))
+    .pipe(gulp.dest('./../'));
+});
 
 /**
  * Task: `browser-sync`.

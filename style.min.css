@@ -110,7 +110,7 @@ a:hover,a:active{outline:0}
 .nav-collapse ul{margin:0;padding:0;width:100%;display:block;list-style:none}
 .js .nav-collapse{clip:rect(0 0 0 0);max-height:0;position:absolute;display:block;overflow:hidden;zoom:1}
 .nav-collapse.opened{max-height:9999px}
-.nav-toggle{-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
+.nav-toggle{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
 .nav-collapse,.nav-collapse *{box-sizing:border-box}
 .nav-collapse{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}
 .nav-collapse,.nav-collapse ul{list-style:none;width:100%;float:left}

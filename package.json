@@ -7,7 +7,10 @@
     "type": "git",
     "url": "https://github.com/ahmadawais/WPGulp"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gulp-zip": "^4.1.0",
+    "npm": "^6.0.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.1",

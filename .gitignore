@@ -11,6 +11,7 @@
 *.zip
 *.tgz
 *.map
+package-lock.json
 
 # Logs and databases #
 ######################
@@ -60,6 +61,8 @@ node_modules
 ##########
 /README.html
 /build/
+style.css
+style.min.css
 
 # PhpStrom Project Files #
 .idea/
