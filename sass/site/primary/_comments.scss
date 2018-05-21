@@ -63,6 +63,26 @@
 
 .comment-respond {
 
+	.logged-in-as {
+		a {
+			color: $color__darkest;
+			margin-left: -2px;
+			margin-right: -2px;
+			padding-left: 2px;
+			padding-right: 2px;
+			box-shadow: inset 0 -2px 0 #7c8f90;
+			text-decoration: none;
+			padding-bottom: 2px;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: #fff;
+				background-color: $color__darkest;
+			}
+		}
+	}
+
 	.comment-reply-title {
 		margin-top: 0;
 	}
