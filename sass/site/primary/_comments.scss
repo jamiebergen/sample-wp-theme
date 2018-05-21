@@ -4,3 +4,79 @@
 .bypostauthor {
 	display: block;
 }
+
+.comments-area {
+
+	ol.comment-list {
+		margin: 0;
+		padding: 2em 0;
+
+		> li {
+			list-style-type: none;
+			margin-bottom: 2em;
+			padding-bottom: 2em;
+			border-bottom: 1px solid $color__lightest;
+
+			&:last-of-type {
+				border: none;
+			}
+
+			a.url,
+			.comment-metadata a {
+				margin: 0;
+				padding: 0;
+				box-shadow: none;
+			}
+		}
+
+		.avatar {
+			border-radius: 50%;
+			border: 1px solid $color__lightest;
+			padding: 0.3em;
+			display: block;
+		}
+
+		.comment-metadata {
+			@include font-size(1);
+
+			a {
+				color: $color__lighter-copy;
+
+				&:hover,
+				&:focus {
+					color: $color__darkest;
+				}
+			}
+		}
+	}
+}
+
+.comment-respond {
+
+	.comment-reply-title {
+		margin-top: 0;
+	}
+
+	background-color: $color__light-background;
+	padding: 2em 3em 1em 3em;
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		label {
+			padding-right: 0.5em;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		padding: 1em;
+	}
+
+	@media screen and (max-width: 500px) {
+		input[type="text"],
+		input[type="email"],
+		input[type="url"] {
+			width: 100%;
+		}
+	}
+}

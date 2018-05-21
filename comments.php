@@ -51,8 +51,9 @@ if ( post_password_required() ) {
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
+				'style'       => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 64,
 			) );
 			?>
 		</ol><!-- .comment-list -->
@@ -69,7 +70,11 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
+	comment_form(
+	        array(  'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+		            'title_reply_after'  => '</h2>',
+	        )
+    );
 	?>
 
 </div><!-- #comments -->
