@@ -11,11 +11,17 @@
 		margin: 0;
 		padding: 2em 0;
 
-		> li {
+		li.comment {
 			list-style-type: none;
-			margin-bottom: 2em;
+			margin-bottom: 2.5em;
 			padding-bottom: 2em;
 			border-bottom: 1px solid $color__lightest;
+
+			&:not(.depth-1) {
+				margin: 0;
+				padding: 0;
+				border-bottom: none;
+			}
 
 			&:last-of-type {
 				border: none;
@@ -34,6 +40,10 @@
 			border: 1px solid $color__lightest;
 			padding: 0.3em;
 			display: block;
+		}
+
+		.reply {
+			margin-bottom: 1em;
 		}
 
 		.comment-metadata {
