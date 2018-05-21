@@ -8,11 +8,10 @@ The theme was built from the `_s` starter theme (also known as `underscores`). F
 
 * Sass: Styles are organized in modular `.scss` files and compiled using the [Sass CSS preprocessor](https://sass-lang.com/).
 * Gulp: Makes use of [WP-Gulp](https://github.com/ahmadawais/WPGulp), an easy-to-use WordPress Gulp boilerplate. This enables live browser reloads using BrowserSync, Sass to CSS conversion, autoprefixing, CSS minification, JS concatenation, and image minification, among other things.
-⋅⋅* Note that `gulp-zip` was added to generate a zip file of the theme.
+(Note that `gulp-zip` was added to generate a zip file of the theme.)
 * Modern CSS: Layouts were achieved using Flexbox and CSS Grid.
 * Accessible and responsive multi-level menu based on [responsive-nav.js](https://github.com/viljamis/responsive-nav.js)
-* Translation-ready
-* !!!TO DO: Responsive typography using a Sass mixin
+* Strings are translation ready.
 
 Testing
 ---------------
@@ -24,11 +23,11 @@ The theme was tested as follows:
 3. Install WordPress [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test) data
 4. Run [Theme Check](https://wordpress.org/plugins/theme-check/) plugin
 4. Test for compliance with [WCAG 2.0 accessibility guidelines](https://www.w3.org/WAI/intro/wcag), Level AA
-5. !!!TO DO: Test on common browsers - based on [w3schools.com browser usage statistics](https://www.w3schools.com/browsers/default.asp) 
-6. !!!TO DO: Test on common devices - based on [BrowserStack guidelines](https://www.browserstack.com/test-on-the-right-mobile-devices)
+5. Test on common browsers - based on [w3schools.com browser usage statistics](https://www.w3schools.com/browsers/default.asp) 
+6. Test on common devices - based on [BrowserStack guidelines](https://www.browserstack.com/test-on-the-right-mobile-devices)
 7. !!!TO DO: Test for adherence with WordPress coding standards using [PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 
-Gists
+Gists and Documentation
 ---------------
 
 * [Accessible and translatable "read more" link for excerpts](https://gist.github.com/48d41daa1ec6ffe3bc6276d8506ab3bc)
@@ -54,7 +53,7 @@ To continue development on the theme
 
 Optional commands:
 ```
-# To generate a zip file of the theme
+# To generate a zip file of the theme (excluding Sass and Gulp files/folders)
 gulp zip
 ```
 ```
