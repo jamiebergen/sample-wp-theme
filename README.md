@@ -8,6 +8,7 @@ The theme was built from the `_s` starter theme (also known as `underscores`). F
 
 * Sass: Styles are organized in modular `.scss` files and compiled using the [Sass CSS preprocessor](https://sass-lang.com/).
 * Gulp: Makes use of [WP-Gulp](https://github.com/ahmadawais/WPGulp), an easy-to-use WordPress Gulp boilerplate. This enables live browser reloads using BrowserSync, Sass to CSS conversion, autoprefixing, CSS minification, JS concatenation, and image minification, among other things.
+⋅⋅* Note that `gulp-zip` was added to generate a zip file of the theme.
 * Modern CSS: Layouts were achieved using Flexbox and CSS Grid.
 * Accessible and responsive multi-level menu based on [responsive-nav.js](https://github.com/viljamis/responsive-nav.js)
 * Translation-ready
@@ -37,19 +38,19 @@ Gists
 To use the theme in a WordPress install
 ---------------
 
-* Download jmb-sample-theme.zip and upload it via the WordPress dashboard (Admin > Appearance > Themes)
+* Download jmb-sample-theme.zip and upload it via the WordPress dashboard (Admin > Appearance > Themes).
 * It is recommended that you create a [child theme](https://codex.wordpress.org/Child_Themes) if you want to make modifications.
 
 To continue development on the theme
 ---------------
 
 1. Set up a fresh WordPress install on your local machine.
-2. Download or `git clone` the project into your themes directory.
+2. `git clone` the project into your themes directory.
 3. Update the `projectURL` variable in `gulpfile.js` to match your local project URL.
 4. Ensure that you have NodeJS, NPM, and Gulp installed on your local machine. (If not, refer to the instructions [here](https://github.com/ahmadawais/WPGulp).)
 5. Navigate to the root of jmb-sample-theme directory and run the command `sudo npm install`. This will create a `node_modules` folder.
 6. Type the `gulp` command. This will launch the site in your browser and enable live reloads using BrowserSync.
-7. To stop gulp press `CTRL (⌃) + C`
+7. To stop Gulp, press `CTRL (⌃) + C`.
 
 Optional commands:
 ```
