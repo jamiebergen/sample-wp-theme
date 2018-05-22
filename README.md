@@ -2,13 +2,15 @@
 Sample WordPress Theme
 ===
 
-This is a minimal WordPress sample theme intended to demonstrate good practices in theme development. Use it as-is for a blog, or extend it into a more fully featured site.
+This is a WordPress sample theme intended to demonstrate good practices in theme development. 
+Use it as-is for a blog, or extend it into a more fully featured site.
+[See a demo here](https://sampletheme.jamiebergen.com/).
 
 The theme was built from the `_s` starter theme (also known as `underscores`). Features include:
 
 * Sass: Styles are organized in modular `.scss` files and compiled using the [Sass CSS preprocessor](https://sass-lang.com/).
 * Gulp: Makes use of [WP-Gulp](https://github.com/ahmadawais/WPGulp), an easy-to-use WordPress Gulp boilerplate. This enables live browser reloads using BrowserSync, Sass to CSS conversion, autoprefixing, CSS minification, JS concatenation, and image minification, among other things.
-(Note that `gulp-zip` was added to generate a zip file of the theme.)
+(Note that `gulp-zip` was added to generate an installable zip file of the theme.)
 * Modern CSS: Layouts were achieved using Flexbox and CSS Grid.
 * Accessible and responsive multi-level menu based on [responsive-nav.js](https://github.com/viljamis/responsive-nav.js)
 * Strings are translation ready.
