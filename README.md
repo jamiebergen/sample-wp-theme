@@ -20,14 +20,15 @@ Testing
 
 The theme was tested as follows:
 
-1. Verify that the theme doesn't cause any PHP or JavaScript errors
-2. [Validate HTML and CSS](https://codex.wordpress.org/Validating_a_Website)
-3. Install WordPress [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test) data
-4. Run [Theme Check](https://wordpress.org/plugins/theme-check/) plugin
-4. Test for compliance with [WCAG 2.0 accessibility guidelines](https://www.w3.org/WAI/intro/wcag), Level AA
-5. Test on common browsers - based on [w3schools.com browser usage statistics](https://www.w3schools.com/browsers/default.asp) 
-6. Test on common devices - based on [BrowserStack guidelines](https://www.browserstack.com/test-on-the-right-mobile-devices)
-7. !!!TO DO: Test for adherence with WordPress coding standards using [PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
+1. Verify that the theme doesn't cause any PHP or JavaScript errors.
+2. [Validate HTML and CSS](https://codex.wordpress.org/Validating_a_Website).
+3. Import WordPress [Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test) data.
+4. Create a page with [Gutenberg test content](https://sridharkatakam.com/dummy-content-for-gutenberg/).
+5. Run [Theme Check](https://wordpress.org/plugins/theme-check/) plugin
+6. Test for compliance with [WCAG 2.0 accessibility guidelines](https://www.w3.org/WAI/intro/wcag), Level AA 
+7. Test on common browsers - based on [w3schools.com browser usage statistics](https://www.w3schools.com/browsers/default.asp) 
+8. Test on common devices - based on [BrowserStack guidelines](https://www.browserstack.com/test-on-the-right-mobile-devices)
+9. !!!TO DO: Test for adherence with WordPress coding standards using [PHP_CodeSniffer](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 
 Gists and Documentation
 ---------------
