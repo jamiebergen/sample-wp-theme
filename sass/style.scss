@@ -101,6 +101,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "site/global";
 
 /*--------------------------------------------------------------
+# Gutenberg
+--------------------------------------------------------------*/
+@import "site/gutenberg";
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";

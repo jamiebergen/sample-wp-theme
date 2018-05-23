@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 # Positioning of main page sections
 --------------------------------------------------------------*/
+// Prevent horizontal scroll with full-width images
+#page {
+	overflow: hidden;
+}
 
 #content {
 

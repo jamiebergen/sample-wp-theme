@@ -79,6 +79,14 @@ if ( ! function_exists( 'jmb_sample_theme_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		/**
+		 * Add support for wide images with Gutenberg
+		 *
+		 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+		 */
+		add_theme_support( 'align-wide' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'jmb_sample_theme_setup' );
